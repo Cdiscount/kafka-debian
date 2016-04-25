@@ -1,15 +1,15 @@
 --- a/config/log4j.properties
 +++ b/config/log4j.properties
-@@ -15,7 +15,7 @@
- 
- kafka.logs.dir=logs
+@@ -13,7 +13,7 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
  
 -log4j.rootLogger=INFO, stdout 
-+log4j.rootLogger=WARN, stdout 
++log4j.rootLogger=WARN, stdout
  
  log4j.appender.stdout=org.apache.log4j.ConsoleAppender
  log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
-@@ -57,7 +57,7 @@
+@@ -61,7 +61,7 @@
  #log4j.logger.kafka.perf=DEBUG, kafkaAppender
  #log4j.logger.kafka.perf.ProducerPerformance$ProducerThread=DEBUG, kafkaAppender
  #log4j.logger.org.I0Itec.zkclient.ZkClient=DEBUG
@@ -18,7 +18,7 @@
  
  log4j.logger.kafka.network.RequestChannel$=WARN, requestAppender
  log4j.additivity.kafka.network.RequestChannel$=false
-@@ -68,11 +68,11 @@
+@@ -72,13 +72,13 @@
  log4j.logger.kafka.request.logger=WARN, requestAppender
  log4j.additivity.kafka.request.logger=false
  
@@ -33,3 +33,5 @@
 -log4j.logger.state.change.logger=TRACE, stateChangeAppender
 +log4j.logger.state.change.logger=WARN, stateChangeAppender
  log4j.additivity.state.change.logger=false
+ 
+ #Change this to debug to get the actual audit log for authorizer.

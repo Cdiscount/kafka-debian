@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    remove|purge)
+	USERNAME='kafka'
+	if [ -x "$(command -v deluser)" ]; then
+		grep $USERNAME > /dev/null /etc/passwd && deluser $USERNAME || true
+  	else
+		echo >&2 "not deleting $USERNAME system account because deluser command was not found"
+	fi
+    ;;
+
+    *)
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0
+
